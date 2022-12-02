@@ -14,27 +14,42 @@
 <body>
     <h1 id="t1" class="titulo">Meu Cabeçalho</h1>
     <a href="#" id="link">Meu link</a>
-    <footer> 
-      <span>opa</span>
-      <div>epa</div>
+    <footer>
+        <span>opa</span>
+        <div>epa</div>
     </footer>
     <script>
         const tag = document.getElementsByTagName('h1');
         const titleClass = document.getElementsByClassName('titulo');
-        const titleId  = document.getElementById('t1');
+        const titleId = document.getElementById('t1');
         //console.log('titleId', titleId);
 
+
+        //criando elementos no DOM:
+
+        const p = document.createElement('p');
+        p.textContent = 'Meu p';
+        // primeira forma de add tributo: p.setAttribute('id', 'meuP');
+        // segunda forma de add tributo:
+        p.id = 'meu';
+        p.className = 'paragrafo';
+
+        console.log(p.hasAttribute('id'));
+
+        //adicionando o texto no body:
+        const body = document.querySelector('body');
+        body.appendChild(p);
 
 
         //queryselector chama pelos 3 jeitos, é melhor de usar:
         //querySelectorAll pega vários elementos de uma unica vez.
         //hasAttribute retorna um boleano (true or false).
 
-       // chamando pela tag const querySelector = document.querySelector('h1');
+        // chamando pela tag const querySelector = document.querySelector('h1');
         // chamando pela class const querySelector = document.querySelector('.titulo');
-       //chamando pelo id const querySelector = document.querySelector('#t1');
-       const querySelector = document.querySelector('h1');
-        console.log('querySelector', querySelector.hasAttribute('id'));
+        //chamando pelo id const querySelector = document.querySelector('#t1');
+        const querySelector = document.querySelector('h1');
+       // console.log('querySelector', querySelector.hasAttribute('id'));
         // input aEventListner focus setAttr
         // input aEventListner blur remove attr
         // select aEventListner change select profissao
