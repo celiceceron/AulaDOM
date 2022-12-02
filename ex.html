@@ -27,11 +27,14 @@
 
 
         //queryselector chama pelos 3 jeitos, é melhor de usar:
+        //querySelectorAll pega vários elementos de uma unica vez.
+        //hasAttribute retorna um boleano (true or false).
+
        // chamando pela tag const querySelector = document.querySelector('h1');
         // chamando pela class const querySelector = document.querySelector('.titulo');
        //chamando pelo id const querySelector = document.querySelector('#t1');
-       const querySelector = document.querySelector('footer div');
-        console.log('querySelector', querySelector);
+       const querySelector = document.querySelector('h1');
+        console.log('querySelector', querySelector.hasAttribute('id'));
         // input aEventListner focus setAttr
         // input aEventListner blur remove attr
         // select aEventListner change select profissao
