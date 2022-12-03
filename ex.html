@@ -14,6 +14,16 @@
 <body>
     <h1 id="t1" class="titulo">Meu Cabeçalho</h1>
     <a href="#" id="link">Meu link</a>
+    <input type="text" value="" id="input-text">
+    <select>
+        <option value="">Selecione sua profissão</option>
+        <option>Front-end</option>
+        <option>back-end</option>
+        <option>Devops</option>
+    </select>
+    <div id="result">
+
+    </div>
     <footer>
         <span>opa</span>
         <div>epa</div>
@@ -40,7 +50,6 @@
         const body = document.querySelector('body');
         body.appendChild(p);
 
-
         //queryselector chama pelos 3 jeitos, é melhor de usar:
         //querySelectorAll pega vários elementos de uma unica vez.
         //hasAttribute retorna um boleano (true or false).
@@ -51,8 +60,21 @@
         const querySelector = document.querySelector('h1');
        // console.log('querySelector', querySelector.hasAttribute('id'));
         // input aEventListner focus setAttr
+        const input = document.querySelector('#input-text');
+        input.addEventListener('focus' , () => {
+            input.className = 'ativo'
+        });
         // input aEventListner blur remove attr
+        input.addEventListener('blur', () =>{
+            input.removeAttribute('class')
+        });
         // select aEventListner change select profissao
+        const select = document.querySelector('select');
+        const result = document.querySelector('#result')
+        select.addEventListener('change', (event)=>{
+            console.log(event.target.value);
+            result.textContent = `Quero trabalhar com ${event.target.value}`;
+        });
     </script>
 </body>
 
